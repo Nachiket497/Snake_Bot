@@ -8,17 +8,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="0.0710793942695045 0.224436776879595 0.0126475230386502"
+        xyz="-6.76297808727133E-09 0.0270550012386077 -2.75401897972469E-05"
         rpy="0 0 0" />
       <mass
-        value="0.395521671326912" />
+        value="0.0495277420594313" />
       <inertia
-        ixx="0.00739500661937209"
-        ixy="-0.00184904017859878"
-        ixz="-0.000132078310134095"
-        iyy="0.000839038846726317"
-        iyz="-0.000709548257376262"
-        izz="0.00794616283859888" />
+        ixx="1.41497431902948E-05"
+        ixy="-5.54976014034712E-13"
+        ixz="3.69455240015949E-12"
+        iyy="9.94040203055118E-06"
+        iyz="-1.82886992505458E-07"
+        izz="1.24597264635174E-05" />
     </inertial>
     <visual>
       <origin
@@ -31,7 +31,7 @@
       <material
         name="">
         <color
-          rgba="1 1 1 1" />
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
@@ -44,4 +44,390 @@
       </geometry>
     </collision>
   </link>
+  <link
+    name="head">
+    <inertial>
+      <origin
+        xyz="0.000524437183906545 -0.0129585093549575 0.000453299518954085"
+        rpy="0 0 0" />
+      <mass
+        value="0.00301708508515438" />
+      <inertia
+        ixx="4.38014874293169E-07"
+        ixy="4.25463023339811E-23"
+        ixz="-1.06031804154792E-38"
+        iyy="4.43521393164985E-07"
+        iyz="9.48867566928348E-39"
+        izz="4.38014874293169E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestModule/meshes/head.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestModule/meshes/head.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="head" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="0.0280266508378637 0.050696968075919 -0.0215106904993164"
+        rpy="0 0 0" />
+      <mass
+        value="0.065417433868186" />
+      <inertia
+        ixx="2.24094591970624E-05"
+        ixy="-2.69240795685027E-06"
+        ixz="-6.87230658368201E-09"
+        iyy="1.94647754174922E-05"
+        iyz="-1.24130496938715E-08"
+        izz="2.25049138700149E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestModule/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestModule/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J1"
+    type="continuous">
+    <origin
+      xyz="0 0.04109 0.0236"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="0.0469042070552974 0.0402501542807171 0.000441593610935764"
+        rpy="0 0 0" />
+      <mass
+        value="0.065417429839142" />
+      <inertia
+        ixx="2.14336904079478E-05"
+        ixy="-1.95182692023296E-06"
+        ixz="-9.27013945723663E-08"
+        iyy="1.8947838180617E-05"
+        iyz="-2.08249311891081E-07"
+        izz="2.39976170706746E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestModule/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestModule/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J2"
+    type="continuous">
+    <origin
+      xyz="0.023978 0.1245 0.0021"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="-0.0123754985795076 0.0565779592492555 0.0215106899619177"
+        rpy="0 0 0" />
+      <mass
+        value="0.065417436974768" />
+      <inertia
+        ixx="2.36427864037809E-05"
+        ixy="1.44782811485755E-06"
+        ixz="-3.04186225266554E-09"
+        iyy="1.82314489672853E-05"
+        iyz="1.38586575171965E-08"
+        izz="2.25049146119028E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestModule/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestModule/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J3"
+    type="prismatic">
+    <origin
+      xyz="0.083481 0.18807 0.026367"
+      rpy="3.1409 0.013637 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="0.0556666216993839 0.0160295991468997 0.0213066206836878"
+        rpy="0 0 0" />
+      <mass
+        value="0.0654174306029862" />
+      <inertia
+        ixx="1.84536923891001E-05"
+        ixy="-1.80334125765271E-06"
+        ixz="2.91606689059215E-08"
+        iyy="2.3425155067091E-05"
+        iyz="-8.33540535048116E-08"
+        izz="2.25002990339097E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestModule/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestModule/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J4"
+    type="prismatic">
+    <origin
+      xyz="0.08293 0.27486 0.0049189"
+      rpy="1.5576 0.059977 1.3541" />
+    <parent
+      link="base_link" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0.95993 0.28025 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="-0.0226920572684279 -0.0532986524485344 0.0215106903623613"
+        rpy="0 0 0" />
+      <mass
+        value="0.0654174406564615" />
+      <inertia
+        ixx="2.31935756622329E-05"
+        ixy="-2.07972462066008E-06"
+        ixz="-5.54972786198273E-09"
+        iyy="1.86806621367134E-05"
+        iyz="-1.30581472153084E-08"
+        izz="2.25049157288236E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestModule/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestModule/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J5"
+    type="prismatic">
+    <origin
+      xyz="0.12089 0.34566 0.046738"
+      rpy="-2.9144 -0.0087873 -0.0020312" />
+    <parent
+      link="base_link" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0.87595 0.46913 -0.11243" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="-0.0180491074912297 0.00437066108301593 0.0215440346171326"
+        rpy="0 0 0" />
+      <mass
+        value="0.0158896889808625" />
+      <inertia
+        ixx="8.13328192344155E-06"
+        ixy="8.25101152313521E-07"
+        ixz="-1.37905152531695E-08"
+        iyy="1.13408230222266E-05"
+        iyz="3.33942652627005E-09"
+        izz="8.35517005485215E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestModule/meshes/link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestModule/meshes/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J6"
+    type="fixed">
+    <origin
+      xyz="0.07013 0.41905 0.041164"
+      rpy="-1.4718 0.22816 -1.1572" />
+    <parent
+      link="base_link" />
+    <child
+      link="link6" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
 </robot>
